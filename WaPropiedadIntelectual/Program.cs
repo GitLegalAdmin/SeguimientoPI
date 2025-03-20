@@ -41,7 +41,8 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", builder =>
     {
-        builder.WithOrigins("http://localhost:5500") // URL del frontend
+        //builder.WithOrigins("http://localhost:5500") // URL del frontend
+        builder.AllowAnyOrigin() // URL del frontend
                .AllowAnyHeader()
                .AllowAnyMethod();
     });
@@ -57,7 +58,6 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();    
     app.UseSwagger();
     app.UseSwaggerUI();
 }
