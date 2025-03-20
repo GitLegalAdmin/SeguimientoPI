@@ -5,6 +5,7 @@ using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WaPropiedadIntelectual.Models;
+using WaPropiedadIntelectual.Service;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -48,10 +49,19 @@ public class AuthController : ControllerBase
                 signingCredentials: creds
             );
 
+            var _resUser = await _userManager.FindByNameAsync(model.Username);
+
             return Ok(new
             {
                 token = new JwtSecurityTokenHandler().WriteToken(token),
-                expiration = token.ValidTo
+                expiration = token.ValidTo,
+                user = new
+                {
+                    UserName = _resUser.UserName,
+                    FirstName = _resUser.FirstName,
+                    LastName = _resUser.LastName
+
+                }
             });
         }
         return Unauthorized();

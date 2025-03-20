@@ -54,5 +54,11 @@ namespace WaPropiedadIntelectual.Service
             var result = await _userManager.UpdateAsync(user);
             return result.Succeeded;
         }
+
+        public async Task<ApplicationUser> GetUserAsync(string userName)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+            return user;
+        }
     }
 }

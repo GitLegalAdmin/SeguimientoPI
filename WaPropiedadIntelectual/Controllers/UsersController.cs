@@ -29,14 +29,14 @@ namespace WaPropiedadIntelectual.Controllers
             };
 
             var result = await _userService.AddUserAsync(userObj, user.Password);
-            return result ? Ok() : BadRequest();
 
+            return result ? Ok() : BadRequest();
         }
 
         [HttpPut("edit/{userId}")]
         public async Task<IActionResult> EditUser(string userId, [FromBody] ApplicationUser updatedUser)
         {
-            var result = await _userService.EditUserAsync(userId, updatedUser);
+            var result = await _userService.EditUserAsync(userId, updatedUser); 
             return result ? Ok() : BadRequest();
         }
 
@@ -53,5 +53,12 @@ namespace WaPropiedadIntelectual.Controllers
             var result = await _userService.DeleteUserAsync(userId);
             return result ? Ok() : BadRequest();
         }
+
+        //[HttpGet("getByUserName/{userName}")]
+        //public async Task<IActionResult> getByUserName(string userName)
+        //{
+        //    var result = await _userService.get(userId);
+        //    return result ? Ok() : BadRequest();
+        //}
     }
 }

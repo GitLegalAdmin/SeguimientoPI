@@ -1,19 +1,21 @@
-﻿$(document).ready(function () {
+﻿
+
+$(document).ready(function () {
     // Verificar autenticación al cargar el SPA
     const token = localStorage.getItem('token');
     if (!token) {
         window.location.href = 'auth_login.html'; // Redirigir al login si no hay token
         return;
     }
-
     // Cargar la vista inicial
     loadView('Home/Index');
-
+    //console.log();
+    $(".profile-info h4").text(`${JSON.parse(localStorage.getItem('user')).firstName} ${JSON.parse(localStorage.getItem('user')).lastName}`);
+    //$('#')
     // Manejar la navegación
     $('.treeview-menu a').on('click', function (e) {
         e.preventDefault();
         const view = $(this).data('view');
-        console.log(view);
         loadView(view);
     });
 

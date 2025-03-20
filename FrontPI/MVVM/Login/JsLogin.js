@@ -10,15 +10,15 @@
         }
         var bodypost = JSON.stringify(login);
 
-        console.log(bodypost);
-
         $.ajax({
             url: 'https://localhost:7236/api/auth/login', // URL del backend
             type: 'POST',
             contentType: 'application/json',
             data: bodypost,
             success: function (response) {
+                //console.log(response);
                 localStorage.setItem('token', response.token);
+                localStorage.setItem('user', JSON.stringify(response.user));
                 window.location.href = 'index.html'; // Redirigir al SPA
             },
             error: function () {
