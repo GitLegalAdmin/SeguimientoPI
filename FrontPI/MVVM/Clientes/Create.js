@@ -1,6 +1,14 @@
 ﻿/// <reference path="../config/jsendpoints.js" />
 
 var ClientesCreate = {
+    GetClientes: function () {
+        fetch(apiEndpoints.clientes.selectAll)
+            .then(response => response.json())
+            .then(data => {
+                ClientesCreate.Clientes = data;
+                ClientesCreate.FillDataTable('tClientes', data);
+            });
+    },
     GetResponsable: function () {
         fetch(apiEndpoints.clientes.Getresponsables)
             .then(response => response.json())
@@ -75,6 +83,30 @@ var ClientesCreate = {
             select.appendChild(option);
         });
     },
+    FillDataTable: function (tableId, data) {
+        $('#' + tableId).DataTable({
+            data: data,
+            columns: [
+                { title: "ID", data: "ClienteId" },
+                { title: "Nombre", data: "ClienteNombre" },
+                { title: "RFC", data: "ClienteRFC" },
+                { title: "CURP", data: "ClienteCurp" },
+                { title: "VAT", data: "ClienteVAT" },
+                { title: "Idioma", data: "IdiomaId" },
+                { title: "Tipo Comunicación", data: "TipoComunicacionId" },
+                { title: "Tipo Cliente", data: "TipoClienteId" },
+                { title: "Moneda", data: "MonedaId" },
+                { title: "Sitio Web", data: "ClienteWebSite" },
+                { title: "Email", data: "ClienteEmail" },
+                { title: "Proveedor Fac. Elec.", data: "ProveedorFacElecId" },
+                { title: "Tipo Envío Fac.", data: "TipoEnvioFacId" },
+                { title: "Observaciones", data: "ClienteObservacion" },
+                { title: "Responsable", data: "ResponsableId" },
+                { title: "Tipo Tarifa", data: "TipoTarifaId" }
+            ],
+            destroy: true // Permite reinicializar la tabla
+        });
+    },
     Guardar: function (event) {
         event.preventDefault(); // Prevenir el envío del formulario por defecto
 
@@ -131,6 +163,7 @@ var ClientesCreate = {
     onupdate: function (vnode) {
         // Actualizar los elementos de la vista
     },
+    Clientes: [],
     Responsables: [],
     TipoComunicacion: [],
     Moneda: [],
@@ -142,6 +175,7 @@ var ClientesCreate = {
 }
 
 $(document).ready(function () {
+    ClientesCreate.GetClientes();
     ClientesCreate.GetIdioma();
     ClientesCreate.GetMoneda();
     ClientesCreate.GetResponsable();
