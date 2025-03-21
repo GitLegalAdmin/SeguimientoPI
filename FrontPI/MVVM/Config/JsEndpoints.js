@@ -15,6 +15,9 @@ const apiEndpoints = {
     clientes: {
         gral: `${baseUrl}/api/Clientes`,
         selectAll: `${baseUrl}/api/Clientes/SelectAll`, //Ejemplo
+    },
+    idioma: {
+        selectAll:`${baseUrl}/api/WaIdioma/selectAll`
     }
 };
 
