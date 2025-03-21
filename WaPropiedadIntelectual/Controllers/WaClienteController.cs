@@ -13,5 +13,19 @@ namespace WaPropiedadIntelectual.Controllers
         {
             return Cliente.SelectAll();
         }
+
+        [HttpPost("Merge")]
+        public ClienteObject Merge([FromBody] ClienteObject _cliente)
+
+        {
+            _cliente.Usuarioregistra = User.Identity.Name;
+            return Cliente.Merge(_cliente);
+        }
+
+        [HttpGet("Delete")]
+        public void Delete(int Id)
+        {
+            Cliente.Delete(Id);
+        }
     }
 }
