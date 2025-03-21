@@ -1,6 +1,6 @@
 ﻿namespace WaPropiedadIntelectual.Models.Moneda
 {
-    public class MonedaObject
+    public class MonedaObject :WaPropiedadIntelectual.Models.ModelSelect.ModelSelect
     {
         public int MonedaId { get; set; }
         public string MonedaDescrip { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace WaPropiedadIntelectual.Models.TipoEnvioFac
 {
-    public class TipoEnvioFacObject
+    public class TipoEnvioFacObject : WaPropiedadIntelectual.Models.ModelSelect.ModelSelect
     {
         public int TipoEnvioFacId { get; set; }
         public string TipoEnvioFacDescrip { get; set; }

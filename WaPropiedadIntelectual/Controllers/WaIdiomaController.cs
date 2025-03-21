@@ -8,7 +8,7 @@ namespace WaPropiedadIntelectual.Controllers
     [ApiController]
     public class WaIdiomaController : ControllerBase
     {
-        [Authorize]
+        //[Authorize]
         [HttpGet("selectAll")]
         public  IEnumerable<IdiomaObject> SelectAll()
         {

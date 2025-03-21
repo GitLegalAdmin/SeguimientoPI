@@ -1,6 +1,6 @@
 ﻿namespace WaPropiedadIntelectual.Models.TipoTarifa
 {
-    public class TipoTarifaObject
+    public class TipoTarifaObject : WaPropiedadIntelectual.Models.ModelSelect.ModelSelect
     {
         public int TipoTarifaId { get; set; }
         public string TipotarifaDescrip { get; set; }

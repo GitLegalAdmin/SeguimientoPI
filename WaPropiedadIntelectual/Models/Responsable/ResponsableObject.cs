@@ -1,6 +1,6 @@
 ﻿namespace WaPropiedadIntelectual.Models.Responsable
 {
-    public class ResponsableObject
+    public class ResponsableObject : WaPropiedadIntelectual.Models.ModelSelect.ModelSelect
     {
         public int ResponsableId { get; set; }
         public string ResponsableClave { get; set; }

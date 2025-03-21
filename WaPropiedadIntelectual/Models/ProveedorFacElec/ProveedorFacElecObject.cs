@@ -1,6 +1,6 @@
 ﻿namespace WaPropiedadIntelectual.Models.ProveedorFacElec
 {
-    public class ProveedorFacElecObject
+    public class ProveedorFacElecObject : WaPropiedadIntelectual.Models.ModelSelect.ModelSelect
     {
         public int ProveedorFacElecId { get; set; }
         public string ProveedorFacElecDescrip { get; set; }
