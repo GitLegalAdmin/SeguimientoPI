@@ -5,6 +5,7 @@ var ClientesCreate = {
         fetch(apiEndpoints.clientes.selectAll)
             .then(response => response.json())
             .then(data => {
+                console.log("Datos que llegan del API:", data);
                 ClientesCreate.Clientes = data;
                 ClientesCreate.FillDataTable('tClientes', data);
             });
@@ -18,17 +19,17 @@ var ClientesCreate = {
                 { title: "RFC", data: "clienteRFC" },
                 { title: "CURP", data: "clienteCurp" },
                 { title: "VAT", data: "clienteVAT" },
-                { title: "Idioma", data: "idiomaId" },
-                { title: "Tipo Comunicación", data: "tipoComunicacionId" },
-                { title: "Tipo Cliente", data: "tipoClienteId" },
-                { title: "Moneda", data: "monedaId" },
+                { title: "Idioma", data: "idiomaDescripcion" },
+                { title: "Tipo Comunicación", data: "tipoComunicacionDescrip" },
+                { title: "Tipo Cliente", data: "tipoClienteDescrip" },
+                { title: "Moneda", data: "monedaDescrip" },
                 { title: "Sitio Web", data: "clienteWebSite" },
                 { title: "Email", data: "clienteEmail" },
-                { title: "Proveedor Fac. Elec.", data: "proveedorFacElecId" },
-                { title: "Tipo Envío Fac.", data: "tipoEnvioFacId" },
+                { title: "Proveedor Fac. Elec.", data: "proveedorFacElecDescrip" },
+                { title: "Tipo Envío Fac.", data: "tipoEnvioFacDescrip" },
                 { title: "Observaciones", data: "clienteObservacion" },
-                { title: "Responsable", data: "responsableId" },
-                { title: "Tipo Tarifa", data: "tipoTarifaId" }
+                { title: "Responsable", data: "responsableNombre" },
+                { title: "Tipo Tarifa", data: "tipotarifaDescrip" }
             ],
             destroy: true // Permite reinicializar la tabla
         });
