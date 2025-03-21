@@ -10,7 +10,7 @@ namespace WaPropiedadIntelectual.Controllers
     {
         [Authorize]
         [HttpGet("selectAll")]
-        public  IEnumerable<IdiomaObject> SelectAll()
+        public  IEnumerable<tipoTarifaObject> SelectAll()
         {
             return Idioma.SelectAll();
         }

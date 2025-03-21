@@ -5,7 +5,7 @@ namespace WaPropiedadIntelectual.Models.Cliente
 {
     public class Idioma
     {
-        public static IEnumerable<IdiomaObject> SelectAll()
+        public static IEnumerable<tipoTarifaObject> SelectAll()
         {
             using (var cnn = AppSettings.GetConnection())
             {
@@ -13,7 +13,7 @@ namespace WaPropiedadIntelectual.Models.Cliente
                 //parameters.Add("@usuario", Usuario);
 
                 cnn.Open();
-                var res = cnn.Query<IdiomaObject>("usp_idioma_SelectAll", parameters, commandType: CommandType.StoredProcedure).AsEnumerable();
+                var res = cnn.Query<tipoTarifaObject>("usp_idioma_SelectAll", parameters, commandType: CommandType.StoredProcedure).AsEnumerable();
                 return res;
             }
         }
