@@ -42,7 +42,6 @@ namespace WaPropiedadIntelectual.Models.Cliente
                 parameters.Add("@ClienteObservacion", _cliente.ClienteObservacion);
                 parameters.Add("@ClienteRecMarca", _cliente.ClienteRecMarca);
                 parameters.Add("@ClienteRecPatente", _cliente.ClienteRecPatente);
-                parameters.Add("@ClienteFechaAlta", _cliente.ClienteFechaAlta);
                 parameters.Add("@ResponsableId", _cliente.ResponsableId);
                 parameters.Add("@TipoTarifaId", _cliente.TipoTarifaId);
                 parameters.Add("@Usuarioregistra", _cliente.Usuarioregistra);
