@@ -9,9 +9,9 @@ $(document).ready(function () {
     }
     // Cargar la vista inicial
     loadView('Home/Index');
-    //console.log();
+
     $(".profile-info h4").text(`${JSON.parse(localStorage.getItem('user')).firstName} ${JSON.parse(localStorage.getItem('user')).lastName}`);
-    //$('#')
+
     // Manejar la navegación
     $('.treeview-menu a').on('click', function (e) {
         e.preventDefault();
@@ -35,6 +35,4 @@ $(document).ready(function () {
         });
     }
 
-    apiEndpoints.clientes.gral();
-    apiEndpoints.users.getByUserName('oscar.geuguer');
 });
