@@ -1,11 +1,11 @@
 ﻿using Dapper;
 using System.Data;
 
-namespace WaPropiedadIntelectual.Models.Cliente
+namespace WaPropiedadIntelectual.Models.Idioma
 {
     public class Idioma
     {
-        public static IEnumerable<tipoTarifaObject> SelectAll()
+        public static IEnumerable<IdiomaObject> SelectAll()
         {
             using (var cnn = AppSettings.GetConnection())
             {
@@ -13,7 +13,7 @@ namespace WaPropiedadIntelectual.Models.Cliente
                 //parameters.Add("@usuario", Usuario);
 
                 cnn.Open();
-                var res = cnn.Query<tipoTarifaObject>("usp_idioma_SelectAll", parameters, commandType: CommandType.StoredProcedure).AsEnumerable();
+                var res = cnn.Query<IdiomaObject>("usp_idioma_SelectAll", parameters, commandType: CommandType.StoredProcedure).AsEnumerable();
                 return res;
             }
         }

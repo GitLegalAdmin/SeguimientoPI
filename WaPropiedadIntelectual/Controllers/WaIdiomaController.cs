@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WaPropiedadIntelectual.Models.Cliente;
+using WaPropiedadIntelectual.Models.Idioma;
 
 namespace WaPropiedadIntelectual.Controllers
 {
@@ -10,7 +10,7 @@ namespace WaPropiedadIntelectual.Controllers
     {
         [Authorize]
         [HttpGet("selectAll")]
-        public  IEnumerable<tipoTarifaObject> SelectAll()
+        public  IEnumerable<IdiomaObject> SelectAll()
         {
             return Idioma.SelectAll();
         }
