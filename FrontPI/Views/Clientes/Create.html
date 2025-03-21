@@ -28,7 +28,7 @@
                 <!-- /.box-header -->
 
                 <div class="box-body">
-                    <form class="form" action="/submit-client" method="POST">
+                    <form class="form" action="/submit-client" method="POST" onsubmit="ClientesCreate.Guardar(event)">
                         <h4 class="box-title text-info mb-0"><i class="ti-user me-15"></i> Datos generales</h4>
 
                         <!-- Datos del Cliente -->
@@ -105,8 +105,6 @@
                             </select>
                         </div>
 
-
-
                         <!-- Responsable -->
                         <div class="form-group">
                             <label for="responsable">Responsable</label>
@@ -124,6 +122,22 @@
                                 <option value="1">Tarifa Básica</option>
                                 <option value="2">Tarifa Premium</option>
                                 <!-- Agregar más opciones si es necesario -->
+                            </select>
+                        </div>
+
+                        <!-- Tipo de Envío de Factura -->
+                        <div class="form-group">
+                            <label for="tipoEnvioFac">Tipo de Envío de Factura</label>
+                            <select id="tipoEnvioFac" name="tipoEnvioFac" class="form-control" required>
+                                <!-- Aquí se pueden agregar tipos de envío de factura dinámicamente -->
+                            </select>
+                        </div>
+
+                        <!-- Proveedor de Facturación Electrónica -->
+                        <div class="form-group">
+                            <label for="proveedorFacElec">Proveedor de Facturación Electrónica</label>
+                            <select id="proveedorFacElec" name="proveedorFacElec" class="form-control" required>
+                                <!-- Aquí se pueden agregar proveedores de facturación electrónica dinámicamente -->
                             </select>
                         </div>
 

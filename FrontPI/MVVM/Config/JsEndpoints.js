@@ -20,7 +20,13 @@ const apiEndpoints = {
         GetTipoComunicacion: `${baseUrl}/api/WaTipoComunicacion/selectAll`,
         GetMoneda: `${baseUrl}/api/WaMoneda/selectAll`,
         GetTipoCliente: `${baseUrl}/api/WaTipoCliente/selectAll`,
-        GetTipoTarifa: `${baseUrl}/api/WaTipoTarifa/selectAll`
+        GetTipoTarifa: `${baseUrl}/api/WaTipoTarifa/selectAll`,
+
+        GetTipoEnvioFac: `${baseUrl}/api/WaTipoEnvioFac/selectAll`,
+        GetProveedorFacElec: `${baseUrl}/api/WaProveedorFacElec/selectAll`,
+
+
+        Guardar: `${baseUrl}/api/WaCliente/Merge`
 
     },
 
