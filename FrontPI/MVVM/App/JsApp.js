@@ -34,4 +34,7 @@ $(document).ready(function () {
             $('#MainContent').html('<p>Error cargando la vista.</p>');
         });
     }
+
+    apiEndpoints.clientes.gral();
+    apiEndpoints.users.getByUserName('oscar.geuguer');
 });

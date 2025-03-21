@@ -15,6 +15,7 @@ window.fetch = function (url, options) {
     // Llama al fetch original con las opciones modificadas
     return originalFetch(url, options);
 };
+
 // Sobrescribe el comportamiento de $.ajax para agregar el encabezado Authorization
 $.ajax = function (options) {
     // Si options es una string, conviértela en un objeto (para casos donde solo se pasa la URL)

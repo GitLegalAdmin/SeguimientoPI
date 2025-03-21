@@ -10,7 +10,7 @@ const apiEndpoints = {
         edit: (id) => `${baseUrl}/api/Users/edit/${id}`,
         changePassword: (id) => `${baseUrl}/api/users/change-password/${id}`,
         delete: (id) => `${baseUrl}/api/users/${id}`,
-        getByUserName: (userName) => `${baseUrl}/api/users/getByUserName${userName}`
+        getByUserName: (userName) => `${baseUrl}/api/users/getByUserName/${userName}`
     },
     clientes: {
         gral: `${baseUrl}/api/Clientes`,
